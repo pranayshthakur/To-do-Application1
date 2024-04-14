@@ -68,7 +68,6 @@ class TestFlaskApp(unittest.TestCase):
            
 
             # Add a small delay to ensure the task is deleted before checking for remaining tasks
-        # Attempt to interact with the element
   
         
         # Verify if all tasks are deleted
