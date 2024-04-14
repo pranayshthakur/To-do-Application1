@@ -58,14 +58,18 @@ class TestFlaskApp(unittest.TestCase):
         delete_buttons = self.driver.find_elements(By.CLASS_NAME, "deleteButton")
         print(f"Total Delete buttons: {len(delete_buttons)}")
         
-        for button in delete_buttons:
-            task_name = button.find_element(By.XPATH, "./preceding-sibling::span").text
-            print(f"Deleting task: {task_name}")
-            button.click()
+        for _ in range(len(delete_buttons)):
+            #task_name = _.find_element(By.XPATH, "./preceding-sibling::span").text
+            delete_buttons = self.driver.find_elements(By.CLASS_NAME, "deleteButton")
+            
+            #print(f"Deleting task: {task_name}")
+            delete_buttons[0].click()
             print("Clicked on Delete button.")
+           
 
             # Add a small delay to ensure the task is deleted before checking for remaining tasks
-            time.sleep(3)
+        # Attempt to interact with the element
+  
         
         # Verify if all tasks are deleted
         remaining_tasks = self.driver.find_elements(By.CLASS_NAME, "taskContent")
