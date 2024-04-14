@@ -13,7 +13,7 @@ pipeline {
         stage("build docker image"){
             steps {
                 echo "Bulding the image"
-                sh "docker build -t frupru/pythonapp1 ."
+                sh "docker build -t pythonapp1 ."
             }
             
         }
@@ -22,9 +22,9 @@ pipeline {
             steps {
                 echo "pushing to docker hub"
                 withCredentials([usernamePassword(credentialsId:"dockerid",passwordVariable:"dockeridPass",usernameVariable:"dockeridUser")]){
-                sh "docker tag pythonapp1 ${env.dockeridUser}/pythonapp1:latest"
+                sh "docker tag pythonapp1 ${env.dockeridUser}/pythonapp1:1.0"
                 sh "docker login -u ${env.dockeridUser} -p ${env.dockeridPass}"
-                sh "docker push ${env.dockeridUser}/pythonapp1:latest"
+                sh "docker push ${env.dockeridUser}/pythonapp1:1.0"
                 }
                 
             }
@@ -34,7 +34,7 @@ pipeline {
         stage("Deploy"){
             steps {
                 echo "deploy to container"
-                sh "docker run -d -p 5000:5000 frupru/pythonapp1:latest"
+                sh "docker run -d -p 5000:5000 frupru/pythonapp1:1.0"
                 
             }
             
