@@ -68,8 +68,6 @@ class TestFlaskApp(unittest.TestCase):
            
 
             # Add a small delay to ensure the task is deleted before checking for remaining tasks
-            
-  
         
         # Verify if all tasks are deleted
         remaining_tasks = self.driver.find_elements(By.CLASS_NAME, "taskContent")
