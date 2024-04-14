@@ -1,7 +1,7 @@
 **DevOps Project: To-Do Application Deployment**
 
 **Tools and Technologies:**
-1. Technolgoy : Python and HTML
+1. Technolgoy : Python and HTML 
 2. Source Code Repository: GitHub
 3. CI/CD Pipeline: Jenkins
 4. Containerization Tool: Docker

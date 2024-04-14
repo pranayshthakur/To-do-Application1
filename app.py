@@ -17,7 +17,7 @@ def add_task():
     return jsonify({'message': 'Task added successfully'})
 
 @app.route('/mark_complete/<int:task_index>', methods=['PUT'])
-def mark_complete(task_index):
+def mark_complete(task_index): 
     if task_index < len(tasks):
         tasks[task_index]['completed'] = True
         return jsonify({'message': 'Task marked as completed'})

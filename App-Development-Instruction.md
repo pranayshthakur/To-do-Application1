@@ -3,7 +3,7 @@
 To expose the To-Do application as a REST service and interact with it from a front end, we can utilize a framework like Flask to create a web server and handle HTTP requests. Here's how you can modify the To-Do application to expose it as a REST service and create a basic front end to interact with it:
 
 1. **Install Flask:**
-   Before proceeding, make sure you have Flask installed. You can install it via pip:
+   Before proceeding, make sure you have Flask installed. You can install it via pip: 
    ```
    pip install Flask
    ```

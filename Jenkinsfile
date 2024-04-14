@@ -3,7 +3,7 @@ node
     
     stage('code checkout')
     {
-        git branch: 'main', url: 'https://github.com/rajraviojha/To-Do-Application-Deployment.git'
+        git branch: 'main', url: 'https://github.com/rajraviojha/To-Do-Application-Deployment.git' 
     }
     
     stage ('containerize')

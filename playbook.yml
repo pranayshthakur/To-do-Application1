@@ -1,7 +1,7 @@
 ---
 - name: Deploy Docker container
  - hosts: test-server
-  become: true
+  become: true 
   tasks:
   - name: update apt
     command: sudo apt-get update
