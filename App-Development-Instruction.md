@@ -128,4 +128,9 @@ Here's what you need to do:
 3. **Access the Front End:**
    To access the front end of the application, open a web browser and navigate to `http://127.0.0.1:5000/`. You should see the To-Do App interface where you can add, view, complete, and delete tasks.
 
+4. **to use on ec2 instance:**
+   sudo apt install gunicorn
+   gunicorn -b 0.0.0.0:5000 app:app
+and you can access the site
+
 Since the Flask application is running on `127.0.0.1` (localhost) and port `5000`, you can access it locally using that URL. If you want to access it from other devices on the same network, you can use your computer's IP address instead of `127.0.0.1` (e.g., `http://192.168.1.100:5000/`). Just make sure any firewall settings allow access to port `5000`.
