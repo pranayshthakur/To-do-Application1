@@ -13,7 +13,7 @@ COPY . .
 
 # Install any dependencies
 RUN pip install --no-cache-dir flask
-
+RUN pip install --upgrade pip
 # Install dependecies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
