@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    environment {
-        DOCKER_CLI_ENABLE_EXPERIMENTAL = 'enabled'
-    }
+
     
     stages{
         stage("Code Checkout"){
@@ -15,16 +13,9 @@ pipeline {
         
         stage("build docker image"){
             steps {
-                scripts{
-                 // Install buildx (if not already installed)
-                    sh 'docker buildx version || docker buildx install'
-
-                    // Set up BuildKit
-                    sh 'export DOCKER_CLI_EXPERIMENTAL=enabled'
                 echo "Bulding the image"
-                sh "docker buildx build -t pythonapp1 ."
-                    }
-                }
+                sh "docker build -t pythonapp1 ."
+            }
             
         }
         
