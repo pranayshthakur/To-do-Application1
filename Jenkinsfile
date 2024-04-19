@@ -40,6 +40,13 @@ pipeline {
             }
             
         }
+
+        stage("Selenium Test") {
+            steps {
+                echo "Running Selenium tests"
+                sh "python selenium.py"
+            }
+        }
         
     }
     
