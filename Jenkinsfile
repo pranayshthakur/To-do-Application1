@@ -12,6 +12,11 @@ pipeline {
         
         stage("build docker image"){
             steps {
+                 // Install buildx (if not already installed)
+                    sh 'docker buildx version || docker buildx install'
+
+                    // Set up BuildKit
+                    sh 'export DOCKER_CLI_EXPERIMENTAL=enabled'
                 echo "Bulding the image"
                 sh "docker build -t pythonapp1 ."
             }
