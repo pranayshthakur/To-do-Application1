@@ -14,7 +14,7 @@ def chrome_driver():
     # options.add_argument('--disable-gpu')
 
     # Initialize Chrome WebDriver
-    driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", options=options)
+    driver = webdriver.Chrome( options=options)
     
     yield driver  # Yield the driver instance for use in tests
     
