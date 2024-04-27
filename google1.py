@@ -1,12 +1,13 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
 # Selenium WebDriver fixture for Chrome
 @pytest.fixture(scope="function")
 def chrome_driver():
     # Chrome WebDriver options
-    service = service("/usr/local/bin/chromedriver")
+    service = Service("/usr/local/bin/chromedriver")
     options = Options()
     options.add_argument('--no-sandbox')  # Required in some environments
     options.add_argument('--disable-dev-shm-usage')  # Overcome resource limitations
