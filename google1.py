@@ -6,6 +6,7 @@ from selenium.webdriver.chrome.options import Options
 @pytest.fixture(scope="function")
 def chrome_driver():
     # Chrome WebDriver options
+    service = service("/usr/local/bin/chromedriver")
     options = Options()
     options.add_argument('--no-sandbox')  # Required in some environments
     options.add_argument('--disable-dev-shm-usage')  # Overcome resource limitations
@@ -14,7 +15,7 @@ def chrome_driver():
     # options.add_argument('--disable-gpu')
 
     # Initialize Chrome WebDriver
-    driver = webdriver.Chrome( options=options)
+    driver = webdriver.Chrome(service=service, options=options)
     
     yield driver  # Yield the driver instance for use in tests
     
